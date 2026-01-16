@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Md Saalim Hayat Ali | Vibe Coder</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+        
+        body {
+            background-color: #0f172a;
+            color: #e2e8f0;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            padding: 80px 0 40px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            color: #94a3b8;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .location {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(30, 41, 59, 0.7);
+            padding: 8px 16px;
+            border-radius: 50px;
+            margin-top: 15px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        .location:hover {
+            background-color: rgba(59, 130, 246, 0.2);
+            transform: translateY(-2px);
+        }
+        
+        .location i {
+            color: #f59e0b;
+        }
+        
+        .vibe-coder-highlight {
+            display: inline-block;
+            background-color: rgba(139, 92, 246, 0.2);
+            color: #a78bfa;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin: 0 5px;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            margin-bottom: 80px;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .about-section, .projects-section {
+            background-color: rgba(30, 41, 59, 0.5);
+            border-radius: 16px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .section-title {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            color: #60a5fa;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 3px;
+        }
+        
+        .about-text {
+            font-size: 1.1rem;
+            color: #cbd5e1;
+        }
+        
+        .highlight {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+        
+        .projects-list {
+            list-style-type: none;
+        }
+        
+        .project-item {
+            margin-bottom: 25px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .project-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .project-title {
+            font-size: 1.3rem;
+            color: #a78bfa;
+            margin-bottom: 8px;
+        }
+        
+        .project-description {
+            color: #94a3b8;
+        }
+        
+        .contact-section {
+            text-align: center;
+            padding: 60px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 40px;
+        }
+        
+        .contact-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            color: #e2e8f0;
+        }
+        
+        .contact-icons {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .contact-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 15px;
+            font-size: 2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .github-icon {
+            background-color: rgba(36, 41, 46, 0.8);
+            color: #f0f6fc;
+        }
+        
+        .contact-item:hover .github-icon {
+            background-color: rgba(36, 41, 46, 1);
+            box-shadow: 0 10px 20px rgba(36, 41, 46, 0.3);
+        }
+        
+        .gmail-icon {
+            background-color: rgba(234, 67, 53, 0.8);
+            color: white;
+        }
+        
+        .contact-item:hover .gmail-icon {
+            background-color: rgba(234, 67, 53, 1);
+            box-shadow: 0 10px 20px rgba(234, 67, 53, 0.3);
+        }
+        
+        .contact-label {
+            font-size: 1.1rem;
+            color: #94a3b8;
+        }
+        
+        .contact-link {
+            color: #60a5fa;
+            text-decoration: none;
+            margin-top: 5px;
+            font-size: 0.95rem;
+            word-break: break-all;
+        }
+        
+        .contact-link:hover {
+            text-decoration: underline;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 30px 0;
+            color: #64748b;
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .glow-effect {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, rgba(59, 130, 246, 0) 70%);
+            filter: blur(40px);
+            z-index: -1;
+        }
+        
+        .glow-1 {
+            top: 10%;
+            left: 10%;
+        }
+        
+        .glow-2 {
+            bottom: 10%;
+            right: 10%;
+            background: radial-gradient(circle, rgba(139, 92, 246, 0.15) 0%, rgba(139, 92, 246, 0) 70%);
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .hardware-icon {
+            color: #f59e0b;
+        }
+        
+        .ai-icon {
+            color: #10b981;
+        }
+        
+        .mobile-icon {
+            color: #8b5cf6;
+        }
+        
+        .web-icon {
+            color: #3b82f6;
+        }
+        
+        .click-instruction {
+            font-size: 0.8rem;
+            color: #94a3b8;
+            margin-top: 5px;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <div class="glow-effect glow-1"></div>
+    <div class="glow-effect glow-2"></div>
+    
+    <div class="container">
+        <header>
+            <div class="header-content">
+                <h1>Md Saalim Hayat Ali</h1>
+                <p class="tagline">Independent <span class="vibe-coder-highlight">Vibe Coder</span> from Dhanbad, India</p>
+                <a href="https://www.google.com/maps/place/Dhanbad,+Jharkhand" target="_blank" class="location">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Dhanbad, India</span>
+                </a>
+                <div class="click-instruction">(Click to see on map)</div>
+            </div>
+        </header>
+        
+        <div class="main-content">
+            <section class="about-section">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-text">
+                    <p>I'm a <span class="highlight">Vibe Coder</span>—someone who combines intuition, experimentation, and modern tools (including AI) to quickly explore solutions and iterate toward something that feels right and works well in practice.</p>
+                    
+                    <p style="margin-top: 20px;">Instead of over‑engineering, I prioritize clarity, usability, and shipping real features that people can actually use. I enjoy taking an idea from concept to deployment, whether it becomes an Android app, a web tool, an AI‑driven assistant, or a microcontroller‑based system.</p>
+                    
+                    <p style="margin-top: 20px;">My work spans across multiple domains:</p>
+                    
+                    <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-top: 15px;">
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-robot ai-icon"></i>
+                            <span>AI-powered utilities</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-mobile-alt mobile-icon"></i>
+                            <span>Android & mobile apps</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-globe web-icon"></i>
+                            <span>Web applications</span>
+                        </div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <i class="fas fa-microchip hardware-icon"></i>
+                            <span>Hardware & robotics</span>
+                        </div>
+                    </div>
+                    
+                    <p style="margin-top: 20px;">I'm comfortable working on a tight budget, optimizing for modest hardware like an Intel i3 machine and a POCO M6 Pro 5G, which has shaped a mindset of efficiency and resourcefulness.</p>
+                </div>
+            </section>
+            
+            <section class="projects-section">
+                <h2 class="section-title">My Projects</h2>
+                <ul class="projects-list">
+                    <li class="project-item">
+                        <h3 class="project-title">AI-Powered Utilities</h3>
+                        <p class="project-description">Creating practical AI-driven tools and assistants that solve real-world problems with an emphasis on usability and performance.</p>
+                    </li>
+                    <li class="project-item">
+                        <h3 class="project-title">Calorie-Tracking Android App</h3>
+                        <p class="project-description">A user-friendly mobile application designed to help users track their nutrition and maintain a healthy lifestyle.</p>
+                    </li>
+                    <li class="project-item">
+                        <h3 class="project-title">Endless-Runner Mobile Game</h3>
+                        <p class="project-description">An engaging mobile game with endless-runner mechanics, developed with a focus on smooth performance and addictive gameplay.</p>
+                    </li>
+                    <li class="project-item">
+                        <h3 class="project-title">Microcontroller & ESP8266 Projects</h3>
+                        <p class="project-description">Building robotics and IoT systems using microcontrollers and ESP8266 modules to create smart, connected hardware solutions.</p>
+                    </li>
+                </ul>
+            </section>
+        </div>
+        
+        <section class="contact-section">
+            <h2 class="contact-title">Connect With Me</h2>
+            <div class="contact-icons">
+                <a href="https://github.com/Saalimqw" target="_blank" style="text-decoration: none;">
+                    <div class="contact-item floating">
+                        <div class="icon-container github-icon">
+                            <i class="fab fa-github"></i>
+                        </div>
+                        <span class="contact-label">GitHub</span>
+                        <div class="contact-link">github.com/Saalimqw</div>
+                        <div class="click-instruction">(Click to visit)</div>
+                    </div>
+                </a>
+                
+                <a href="mailto:ftsad95@gmail.com" style="text-decoration: none;">
+                    <div class="contact-item floating" style="animation-delay: 1s;">
+                        <div class="icon-container gmail-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <span class="contact-label">Email</span>
+                        <div class="contact-link">ftsad95@gmail.com</div>
+                        <div class="click-instruction">(Click to email)</div>
+                    </div>
+                </a>
+            </div>
+        </section>
+        
+        <footer>
+            <p>Md Saalim Hayat Ali | Vibe Coder</p>
+            <p style="margin-top: 5px;">Coding with intuition, shipping with purpose</p>
+        </footer>
+    </div>
+
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactItems = document.querySelectorAll('.contact-item');
+            
+            contactItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transition = 'all 0.3s ease';
+                });
+            });
+            
+            // Create a subtle floating effect for the glow elements
+            const glows = document.querySelectorAll('.glow-effect');
+            glows.forEach((glow, index) => {
+                // Randomize the floating animation
+                const duration = 15 + Math.random() * 10;
+                const delay = Math.random() * 5;
+                
+                glow.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+            });
+            
+            // Add click effect for location
+            const locationElement = document.querySelector('.location');
+            locationElement.addEventListener('click', function() {
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 200);
+            });
+        });
+    </script>
+</body>
+</html>
